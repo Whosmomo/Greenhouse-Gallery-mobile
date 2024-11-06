@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:greenhouse_gallery/screens/productentry_form.dart';
+import 'package:greenhouse_gallery/widgets/left_drawer.dart';
+import 'package:greenhouse_gallery/widgets/product_card.dart';
+
 
 class MyHomePage extends StatelessWidget {
   final String npm = '2306226233'; // NPM
@@ -25,6 +29,7 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      drawer: const LeftDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -91,6 +96,12 @@ class ItemCard extends StatelessWidget {
             ..showSnackBar(
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!")),
             );
+            if (item.name == "Tambah Produk") {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductEntryFormPage()),
+              );
+          }
         },
         child: Container(
           padding: const EdgeInsets.all(8),

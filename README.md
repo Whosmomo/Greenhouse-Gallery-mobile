@@ -30,3 +30,17 @@ Di Dart, const dan final adalah kata kunci yang digunakan untuk mendefinisikan v
   
 #### Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.  
 Pertama, saya membuat program flutter baru dengan flutter create. Kemudian saya menggunakan MaterialApp dan Scaffold untuk mengatur tema dan tampilan utama aplikasi. Untuk menambah tombol saya membuat daftar ItemHomepage sebagai data tiap tombol, kemudian buat widget ItemCard untuk me-render setiap tombol berdasarkan informasi dari daftar items. Kemudian setiap tombol diberi warna yang berbeda melalui properti color pada objek ItemHomepage. Kemudian pada bagian InkWell di ItemCard, tambahkan aksi onTap untuk memunculkan SnackBar ketika tombol ditekan. Pesan yang ditampilkan di SnackBar dapat disesuaikan berdasarkan teks dari item.name.
+
+## Tugas 8  
+### Pertanyaan  
+#### Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?  
+  
+#### Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!  
+
+#### Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!  
+
+#### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?  
+
+#### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?  
+  
+          
