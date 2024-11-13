@@ -34,13 +34,39 @@ Pertama, saya membuat program flutter baru dengan flutter create. Kemudian saya 
 ## Tugas 8  
 ### Pertanyaan  
 #### Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?  
+const digunakan untuk mendeklarasikan nilai atau widget yang konstan atau tetap. Karena nilainya yang tidak berubah maka const dapat menghemat waktu kompilasi karena widget yang tidak berubah tidak perlu di rebuild ulang dan tidak perlu diperiksa ulang. const sebaiknya digunakan pada widget statis atau yang tidak akan berubah setelah dibuat, seperti teks label, ikon, atau kontainer yang memiliki nilai tetap, sedangkan untuk data yang dinamis atau widget yang nilainya berubah-ubah sebaiknya jangan menggunakan const  
   
 #### Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!  
+Dalam Flutter, Column dan Row adalah widget dasar yang sering digunakan untuk menata layout secara vertikal atau horizontal. Contoh implementasi row terdapat pada file menu.dart untuk menampilkan nama, npm, dan kelas secara horizontal :  
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InfoCard(title: 'NPM', content: npm),
+                InfoCard(title: 'Name', content: name),
+                InfoCard(title: 'Class', content: className),
+              ],
+            ),
+
+Contoh implementasi column berikut untuk menata icon-icon secara vertikal:  
+        body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Icon(Icons.home, size: 40, color: Colors.blue),
+            Icon(Icons.favorite, size: 40, color: Colors.red),
+            Icon(Icons.person, size: 40, color: Colors.green),
+          ],
+        ),
+      ),
 
 #### Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!  
+Pada halaman form terdapat beberapa elemen input seperti TextFormField untuk Name, Description dan Amount dan ElevatedButton sebagai tombol Save. Terdapat juga beberapa elemen input lain seperti CheckboxListTile, RadioListTile, Slider, dan lainya yang tidak digunakan pada tugas kali ini.
 
 #### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?  
+Tema dapat diatur dengan memanfaatkan properti theme pada MaterialApp, kita dapat menyesuaikan tema seperti palet warna, ukuran teks, dan lainya untuk aplikasi yang kita buat. Pada tugas kali ini saya mengimplementasikan palet warna untuk menyesuaikan dengan tema aplikasi saya.
 
 #### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?  
+Untuk navigasi sederhana saya menggunakan Navigator untuk push halaman baru ke atas stack dan pop jika ingin kembali, namun untuk aplikasi dengan banyak halaman menggunakan named routes dapat membantu karena kita bisa mendefinisikan semua rute di satu tempat, membuat navigasi lebih terstruktur dan mudah dikelola.  
   
           

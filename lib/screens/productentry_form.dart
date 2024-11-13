@@ -24,7 +24,7 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
           ),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Colors.white,
+        foregroundColor: Colors.black
       ),
       drawer: const LeftDrawer(),
       body: Form(
