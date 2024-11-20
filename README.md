@@ -67,6 +67,29 @@ Pada halaman form terdapat beberapa elemen input seperti TextFormField untuk Nam
 Tema dapat diatur dengan memanfaatkan properti theme pada MaterialApp, kita dapat menyesuaikan tema seperti palet warna, ukuran teks, dan lainya untuk aplikasi yang kita buat. Pada tugas kali ini saya mengimplementasikan palet warna untuk menyesuaikan dengan tema aplikasi saya.
 
 #### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?  
-Untuk navigasi sederhana saya menggunakan Navigator untuk push halaman baru ke atas stack dan pop jika ingin kembali, namun untuk aplikasi dengan banyak halaman menggunakan named routes dapat membantu karena kita bisa mendefinisikan semua rute di satu tempat, membuat navigasi lebih terstruktur dan mudah dikelola.  
+Untuk navigasi sederhana saya menggunakan Navigator untuk push halaman baru ke atas stack dan pop jika ingin kembali, namun untuk aplikasi dengan banyak halaman menggunakan named routes dapat membantu karena kita bisa mendefinisikan semua rute di satu tempat, membuat navigasi lebih terstruktur dan mudah dikelola. 
+
+## Tugas 8  
+### Pertanyaan 
+#### Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?  
+Membuat model untuk pengambilan atau pengiriman data JSON memberikan banyak keuntungan seperti validasi, kemudahan manipulasi, dan integrasi. Tidak menggunakan model tidak langsung menyebabkan error, tetapi dapat meningkatkan risiko bug dan kesulitan dalam mengelola data yang lebih kompleks.
+
+#### Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini  
+Library http dalam Flutter berfungsi sebagai alat komunikasi antara aplikasi Flutter dan server Django melalui protokol HTTP. Dalam implementasi ini, library http memungkinkan Flutter mengirim berbagai jenis permintaan HTTP, seperti GET untuk mengambil data dari server Django (misalnya daftar produk atau informasi pengguna), POST untuk mengirim data baru (seperti menambahkan produk), PUT atau PATCH untuk memperbarui data, dan DELETE untuk menghapus data. Respons dari Django yang biasanya dalam format JSON dapat diolah menggunakan library ini, sehingga data dapat diubah menjadi objek Dart seperti Map atau List untuk digunakan di aplikasi Flutter. Dengan tambahan fitur untuk menangani error dan waktu tunggu (timeout), library http memastikan aplikasi tetap responsif meskipun server mengalami gangguan.
+
+#### Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.  
+CookieRequest adalah alat untuk menangani cookie secara otomatis, memungkinkan autentikasi berbasis sesi, dan memastikan komunikasi yang lancar antara Flutter dan server. Membagikan instance CookieRequest ke semua komponen dalam aplikasi Flutter penting untuk menjaga konsistensi state dan kemudahan implementasi, terutama dalam aplikasi yang mengandalkan cookie untuk autentikasi atau sesi.  
+  
+#### Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.  
+Input: Pengguna memasukkan data di aplikasi Flutter melalui UI -> Pengiriman Data: Flutter mengirimkan data ke server -> Django menggunakan HTTP (biasanya POST) -> Pemrosesan di Back-End: Django memproses data, memvalidasi, dan menyimpannya di database -> Pengambilan Data: Flutter meminta data dari server Django menggunakan HTTP (GET) -> Tampilkan Data: Flutter menampilkan data yang diterima dari server di UI.
+  
+#### Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.  
+Register: Pengguna memasukkan data akun di Flutter → Data dikirim ke Django → Django membuat akun → Flutter menampilkan pesan sukses.
+Login: Pengguna memasukkan kredensial di Flutter → Data dikirim ke Django → Django memverifikasi dan mengembalikan token → Flutter menyimpan token dan menavigasi ke menu utama.
+Tampilkan Menu: Flutter menggunakan token untuk meminta data menu → Django memverifikasi token dan mengembalikan data → Flutter menampilkan data di UI.
+Logout: Flutter mengirim permintaan logout → Django menghapus token/sesi → Pengguna kembali ke halaman login.  
+
+#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).  
+Pertama saya membuat aplikasi baru bernama authentication pada projek django yang berfungsi untuk menangani autentikasi user serta menangani fungsi login, register, dan logout pada aplikasi. Kemudian saya mebuat berkas login dan register sebagai halaman dan fungsi login dan register. Kemudian dengan bantuan library http saya menghubungkan aplikasi authentication sebagai autentikasi untuk project flutter ini. Kemudian saya membuat model kustom dengan bantuan website quicktype dan membuat berkas berkas list_product.dart untuk menampilkan daftar product yang terasosiasi dengan user.
   
           
